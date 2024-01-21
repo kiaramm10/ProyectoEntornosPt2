@@ -12,12 +12,25 @@ public class Ejercicio1 {
 		int lado3 = sc.nextInt();
 	
 		double area = calcularArea(lado1, lado2, lado3);
-		verResultado(area);
+		
 		
 		System.out.println("Introduce el radio del circulo: ");
         double radio = entradaDouble();
         System.out.println("El área del círculo de radio "+radio+" es "+area(radio));
         System.out.println("El perímetro del círculo de radio "+radio+" es "+perimetro(radio));
+        
+        System.out.println("Ingresa el radio del cilindro: ");
+		double radioCilindro = sc.nextDouble();
+		System.out.println("Introduce la altura el cilindro: ");
+		double altura = sc.nextDouble();
+	
+		double areaCilindro = calcularAreaCilindro(radio, altura);
+		verResultado(area, areaCilindro);
+	}
+	
+	public static double calcularAreaCilindro(double radioCilindro, double altura) {
+		double areaCilindro = 2 * 3.14 * radioCilindro * altura + 2*3.14 *radioCilindro*radioCilindro; 
+		return areaCilindro;
 	}
 	
 	public static double calcularArea(int lado1, int lado2, int lado3) {
@@ -28,11 +41,6 @@ public class Ejercicio1 {
 		
 		return area;
 	}
-	
-	public static void verResultado(double area) {
-		System.out.println("El área del triangulo es: " + area);
-	}
-	
   
     private static double entradaDouble(){
         return sc.nextDouble();
@@ -52,5 +60,10 @@ public class Ejercicio1 {
     	return perimetro;
     	
     }
+    
+    public static void verResultado(double area, double areaCilindro) {
+		System.out.println("El área del triangulo es: " + area);
+		System.out.println("El área del cilindro es: " + areaCilindro);
+	}
 
 }
