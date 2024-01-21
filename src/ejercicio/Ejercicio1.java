@@ -36,6 +36,11 @@ public class Ejercicio1 {
 		
 		System.out.println("El área del rectángulo es "+calcularAreaRectangulo(base, alturarec));
 		
+		System.out.println("Introduce la medida de lado: ");
+		double ladoCubo = sc.nextDouble();
+		double volumenCubo = calcularVolumenCubo(ladoCubo);
+		verResultadoCubo(volumenCubo);
+		
 		System.out.println("Introduce la altura de la arista: ");
 		double arista = entradaDouble();
 		System.out.println("El área del cubo es: " + calcAreaCubo(arista));
@@ -82,17 +87,24 @@ public class Ejercicio1 {
 		System.out.println("El área del cilindro es: " + areaCilindro);
 	}
     
-    
+    public static double calcularVolumenCubo(double ladoCubo) {
+		double volumen = ladoCubo * ladoCubo *ladoCubo;
+		return volumen;
+	}
+	
+	public static void verResultadoCubo(double volumenCubo) {
+		System.out.println("El volumen del cubo es: " + volumenCubo);
+	}
     
     public static double calcularAreaRectangulo(double base, double altura) {
 		
 		return base * altura;
 	}
-    
+
     private static double calcAreaCubo(double arista) {
 		
 		return 6 * Math.pow(arista, 2);
-		
+
 	}
 
 }
