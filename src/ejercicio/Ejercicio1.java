@@ -35,6 +35,10 @@ public class Ejercicio1 {
 		double alturarec = entradaDouble();
 		
 		System.out.println("El área del rectángulo es "+calcularAreaRectangulo(base, alturarec));
+		
+		System.out.println("Introduce la altura de la arista: ");
+		double arista = entradaDouble();
+		System.out.println("El área del cubo es: " + calcAreaCubo(arista));
 	}
 	
 	public static double calcularAreaCilindro(double radioCilindro, double altura) {
@@ -83,6 +87,12 @@ public class Ejercicio1 {
     public static double calcularAreaRectangulo(double base, double altura) {
 		
 		return base * altura;
+	}
+    
+    private static double calcAreaCubo(double arista) {
+		
+		return 6 * Math.pow(arista, 2);
+		
 	}
 
 }
