@@ -5,13 +5,15 @@ public class Ejercicio1 {
 	static Scanner sc = new Scanner(System.in); 
 	public static void main(String[] args) {
 		System.out.println("Introduce el lado del triangulo: ");
-		int lado1 = sc.nextInt();
+		double lado1 = sc.nextDouble();
 		System.out.println("Introduce el segundo lado");
-		int lado2 = sc.nextInt();
-		System.out.println("Introduce el tercero lado");
-		int lado3 = sc.nextInt();
+		double lado2 = sc.nextDouble();
+		System.out.println("Introduce el tercer lado");
+		double lado3 = sc.nextDouble();
 	
 		double area = calcularArea(lado1, lado2, lado3);
+		
+		verResultadoTriangulo(area);
 		
 		
 		System.out.println("Introduce el radio del circulo: ");
@@ -25,7 +27,14 @@ public class Ejercicio1 {
 		double altura = sc.nextDouble();
 	
 		double areaCilindro = calcularAreaCilindro(radio, altura);
-		verResultado(area, areaCilindro);
+		verResultadoCilindro(areaCilindro);
+		
+		System.out.println("Introduce la base: ");
+		double base = entradaDouble();
+		System.out.println("Introduce la altura: ");
+		double alturarec = entradaDouble();
+		
+		System.out.println("El área del rectángulo es "+calcularAreaRectangulo(base, alturarec));
 	}
 	
 	public static double calcularAreaCilindro(double radioCilindro, double altura) {
@@ -33,7 +42,7 @@ public class Ejercicio1 {
 		return areaCilindro;
 	}
 	
-	public static double calcularArea(int lado1, int lado2, int lado3) {
+	public static double calcularArea(double lado1, double lado2, double lado3) {
 		
 		double semiPer = (lado1 + lado2 + lado3) / 2;
 		
@@ -61,9 +70,19 @@ public class Ejercicio1 {
     	
     }
     
-    public static void verResultado(double area, double areaCilindro) {
+    public static void verResultadoTriangulo(double area) {
 		System.out.println("El área del triangulo es: " + area);
+	}
+    
+    public static void verResultadoCilindro(double areaCilindro) {
 		System.out.println("El área del cilindro es: " + areaCilindro);
+	}
+    
+    
+    
+    public static double calcularAreaRectangulo(double base, double altura) {
+		
+		return base * altura;
 	}
 
 }
