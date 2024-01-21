@@ -40,6 +40,10 @@ public class Ejercicio1 {
 		double ladoCubo = sc.nextDouble();
 		double volumenCubo = calcularVolumenCubo(ladoCubo);
 		verResultadoCubo(volumenCubo);
+		
+		System.out.println("Introduce la altura de la arista: ");
+		double arista = entradaDouble();
+		System.out.println("El área del cubo es: " + calcAreaCubo(arista));
 	}
 	
 	public static double calcularAreaCilindro(double radioCilindro, double altura) {
@@ -83,20 +87,24 @@ public class Ejercicio1 {
 		System.out.println("El área del cilindro es: " + areaCilindro);
 	}
     
-    
+    public static double calcularVolumenCubo(double ladoCubo) {
+		double volumen = ladoCubo * ladoCubo *ladoCubo;
+		return volumen;
+	}
+	
+	public static void verResultadoCubo(double volumenCubo) {
+		System.out.println("El volumen del cubo es: " + volumenCubo);
+	}
     
     public static double calcularAreaRectangulo(double base, double altura) {
 		
 		return base * altura;
 	}
-    
-    public static double calcularVolumenCubo(double ladoCubo) {
-		double volumen = ladoCubo * ladoCubo *ladoCubo;
-		return volumen;
-	}
-    
-    public static void verResultadoCubo(double volumenCubo) {
-		System.out.println("El volumen del cubo es: " + volumenCubo);
+
+    private static double calcAreaCubo(double arista) {
+		
+		return 6 * Math.pow(arista, 2);
+
 	}
 
 }
